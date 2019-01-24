@@ -40,7 +40,7 @@ export default class App extends Component {
         break;
       case 'stars':
          let star = e.target.value;
-        let newStars = star.split(' ');
+        let newStars = star.split(',');
         // console.log(newStars[0]);
         this.setState({ stars: newStars });
         console.log(this.state.stars)
