@@ -21,7 +21,7 @@ export default class App extends Component {
   }
 
   addToSavedList = (movie) => {
-    // console.log(this.state.savedList)
+    console.log(this.state.savedList)
     const savedList = this.state.savedList;
     savedList.push(movie);
     this.setState({savedList});
@@ -39,11 +39,9 @@ export default class App extends Component {
         this.setState({ metascore: e.target.value });
         break;
       case 'stars':
-         let star = e.target.value;
+        let star = e.target.value;
         let newStars = star.split(',');
-        // console.log(newStars[0]);
         this.setState({ stars: newStars });
-        console.log(this.state.stars)
         break;
       default:
         console.log("invalid input")
@@ -52,7 +50,6 @@ export default class App extends Component {
 
   createMovie = e => {
     const movie ={ title: this.state.title, director: this.state.director, metascore: this.state.metascore, stars: this.state.stars};
-    // console.log(this.state.movie)
     e.preventDefault();
     axios 
       .post('http://localhost:5000/api/movies', movie)
